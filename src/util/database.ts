@@ -1,5 +1,6 @@
 import { desc, eq, and, sql } from 'drizzle-orm';
 import NodeCache from 'node-cache';
+import { randomUUID } from 'crypto';
 import { getDb } from '../database';
 import {
   datasetsTable,
@@ -573,7 +574,7 @@ export async function getStandaloneEvals({
   // Ensure each row has a UUID as the `id` and `evalId` properties are not unique!
   const withUUIDs = standaloneEvals.map((eval_) => ({
     ...eval_,
-    uuid: crypto.randomUUID(),
+    uuid: randomUUID(),
   }));
 
   standaloneEvalCache.set(cacheKey, withUUIDs);
