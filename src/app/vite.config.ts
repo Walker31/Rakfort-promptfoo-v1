@@ -23,9 +23,10 @@ if (process.env.NODE_ENV === 'development') {
 export default defineConfig({
   server: {
     port: 3000,
+    host:true,
     proxy: {
       '/api': {
-        target: 'http://localhost:15500',
+        target: 'http://34.47.158.40:15500',
         changeOrigin: true,
         secure: false,
       },

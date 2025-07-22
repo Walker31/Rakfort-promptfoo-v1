@@ -19,6 +19,7 @@ import EvalResult from '../../models/evalResult';
 import { updateResult, deleteEval, writeResultsToDatabase } from '../../util/database';
 import invariant from '../../util/invariant';
 import { ApiSchemas } from '../apiSchemas';
+import { getEvalSummaries } from '../../models/eval';
 
 export const evalRouter = Router();
 
@@ -256,6 +257,42 @@ evalRouter.post(
     res.json(result);
   },
 );
+
+evalRouter.get('/dashboard/overview', async (req: Request, res: Response): Promise<void> => {
+  try {
+    const summaries = await getEvalSummaries();
+
+    // Calculate overview stats
+    const totalEvals = summaries.length;
+    const totalTests = summaries.reduce((sum, e) => sum + (e.numTests || 0), 0);
+    const avgPassRate = totalEvals > 0 
+      ? summaries.reduce((sum, e) => sum + (e.passRate || 0), 0) / totalEvals 
+      : 0;
+
+    // Separate red team and regular evals
+    const redTeamEvals = summaries.filter(e => e.isRedteam);
+    const regularEvals = summaries.filter(e => !e.isRedteam);
+
+    const overview = {
+      totalEvals,
+      totalRedTeamRuns: redTeamEvals.length,
+      totalTests,
+      overallPassRate: avgPassRate.toFixed(2),
+      regularEvals: regularEvals.slice(0, 5), // Recent 5
+      redTeamEvals: redTeamEvals.slice(0, 5), // Recent 5
+      passRateTrend: summaries.slice(-10).map(e => ({
+        date: e.createdAt,
+        passRate: e.passRate,
+        evalId: e.evalId
+      }))
+    };
+
+    res.json(overview);
+  } catch (error) {
+    logger.error(`Failed to fetch dashboard overview: ${error}`);
+    res.status(500).json({ error: 'Failed to fetch dashboard overview' });
+  }
+});
 
 evalRouter.post('/', async (req: Request, res: Response): Promise<void> => {
   const body = req.body;
