@@ -64,10 +64,10 @@ importers:
         version: 9.6.0
       '@ibm-cloud/watsonx-ai':
         specifier: ^1.1.0
-        version: 1.6.4(@langchain/core@0.3.45(openai@4.95.1(ws@8.18.1)(zod@3.24.3)))
+        version: 1.6.4(@langchain/core@0.3.45(openai@5.12.0(ws@8.18.1)(zod@3.24.3)))
       '@ibm-generative-ai/node-sdk':
         specifier: ^2.0.6
-        version: 2.0.6(@langchain/core@0.3.45(openai@4.95.1(ws@8.18.1)(zod@3.24.3)))
+        version: 2.0.6(@langchain/core@0.3.45(openai@5.12.0(ws@8.18.1)(zod@3.24.3)))
       '@playwright/browser-chromium':
         specifier: ^1.47.2
         version: 1.52.0
@@ -192,8 +192,8 @@ importers:
         specifier: ^3.2.4
         version: 3.2.4(chokidar@4.0.3)
       openai:
-        specifier: ^4.93.0
-        version: 4.95.1(ws@8.18.1)(zod@3.24.3)
+        specifier: ^5.12.0
+        version: 5.12.0(ws@8.18.1)(zod@3.24.3)
       opener:
         specifier: ^1.5.2
         version: 1.5.2
@@ -1639,6 +1639,10 @@ packages:
 
   '@babel/runtime@7.27.0':
     resolution: {integrity: sha512-VtPOkrdPHZsKc/clNqyi9WUA8TINkZ4cGk63UUE3u4pmB2k+ZMQRDuIOagv8UVd6j7k0T3+RRIb7beKTebNbcw==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/runtime@7.28.2':
+    resolution: {integrity: sha512-KHp2IflsnGywDjBWDkR9iEqiWSpc8GIi0lgTT3mOElT0PP1tG26P4tmFI2YvAdzgq9RGyoHZQEIEdZy6Ec5xCA==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.27.0':
@@ -8928,8 +8932,8 @@ packages:
     resolution: {integrity: sha512-7x81NCL719oNbsq/3mh+hVrAWmFuEYUqrq/Iw3kUzH8ReypT9QQ0BLoJS7/G9k6N81XjW4qHWtjWwe/9eLy1EQ==}
     engines: {node: '>=12'}
 
-  openai@4.95.1:
-    resolution: {integrity: sha512-IqJy+ymeW+k/Wq+2YVN3693OQMMcODRtHEYOlz263MdUwnN/Dwdl9c2EXSxLLtGEHkSHAfvzpDMHI5MaWJKXjQ==}
+  openai@5.12.0:
+    resolution: {integrity: sha512-vUdt02xiWgOHiYUmW0Hj1Qu9OKAiVQu5Bd547ktVCiMKC1BkB5L3ImeEnCyq3WpRKR6ZTaPgekzqdozwdPs7Lg==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
@@ -10820,6 +10824,7 @@ packages:
   superagent@9.0.2:
     resolution: {integrity: sha512-xuW7dzkUpcJq7QnhOsnNUgtYp3xRwpt2F7abdRYIpCsAt0hhUqia0EdxyXZQQpNmGtsCzYHryaKSV3q3GJnq7w==}
     engines: {node: '>=14.18.0'}
+    deprecated: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
 
   supertest@7.1.0:
     resolution: {integrity: sha512-5QeSO8hSrKghtcWEoPiO036fxH0Ii2wVQfFZSP0oqQhmjk8bOLhDFXr4JrvaFmPuEWUoq4znY3uSi8UzLKxGqw==}
@@ -13355,6 +13360,8 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
+  '@babel/runtime@7.28.2': {}
+
   '@babel/template@7.27.0':
     dependencies:
       '@babel/code-frame': 7.26.2
@@ -14860,9 +14867,9 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
-  '@ibm-cloud/watsonx-ai@1.6.4(@langchain/core@0.3.45(openai@4.95.1(ws@8.18.1)(zod@3.24.3)))':
+  '@ibm-cloud/watsonx-ai@1.6.4(@langchain/core@0.3.45(openai@5.12.0(ws@8.18.1)(zod@3.24.3)))':
     dependencies:
-      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.45(openai@4.95.1(ws@8.18.1)(zod@3.24.3)))
+      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.45(openai@5.12.0(ws@8.18.1)(zod@3.24.3)))
       '@types/node': 18.19.86
       extend: 3.0.2
       ibm-cloud-sdk-core: 5.3.2
@@ -14870,10 +14877,10 @@ snapshots:
       - '@langchain/core'
       - supports-color
 
-  '@ibm-generative-ai/node-sdk@2.0.6(@langchain/core@0.3.45(openai@4.95.1(ws@8.18.1)(zod@3.24.3)))':
+  '@ibm-generative-ai/node-sdk@2.0.6(@langchain/core@0.3.45(openai@5.12.0(ws@8.18.1)(zod@3.24.3)))':
     dependencies:
       '@ai-zen/node-fetch-event-source': 2.1.4
-      '@langchain/core': 0.3.45(openai@4.95.1(ws@8.18.1)(zod@3.24.3))
+      '@langchain/core': 0.3.45(openai@5.12.0(ws@8.18.1)(zod@3.24.3))
       fetch-retry: 5.0.6
       http-status-codes: 2.3.0
       openapi-fetch: 0.8.2
@@ -15288,14 +15295,14 @@ snapshots:
 
   '@kurkle/color@0.3.4': {}
 
-  '@langchain/core@0.3.45(openai@4.95.1(ws@8.18.1)(zod@3.24.3))':
+  '@langchain/core@0.3.45(openai@5.12.0(ws@8.18.1)(zod@3.24.3))':
     dependencies:
       '@cfworker/json-schema': 4.1.1
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.19
-      langsmith: 0.3.20(openai@4.95.1(ws@8.18.1)(zod@3.24.3))
+      langsmith: 0.3.20(openai@5.12.0(ws@8.18.1)(zod@3.24.3))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -15305,9 +15312,9 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/textsplitters@0.1.0(@langchain/core@0.3.45(openai@4.95.1(ws@8.18.1)(zod@3.24.3)))':
+  '@langchain/textsplitters@0.1.0(@langchain/core@0.3.45(openai@5.12.0(ws@8.18.1)(zod@3.24.3)))':
     dependencies:
-      '@langchain/core': 0.3.45(openai@4.95.1(ws@8.18.1)(zod@3.24.3))
+      '@langchain/core': 0.3.45(openai@5.12.0(ws@8.18.1)(zod@3.24.3))
       js-tiktoken: 1.0.19
 
   '@leichtgewicht/ip-codec@2.0.5': {}
@@ -15511,7 +15518,7 @@ snapshots:
 
   '@mui/types@7.4.1(@types/react@18.3.20)':
     dependencies:
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.28.2
     optionalDependencies:
       '@types/react': 18.3.20
 
@@ -15870,7 +15877,7 @@ snapshots:
 
   '@slorber/react-helmet-async@1.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.28.2
       invariant: 2.2.4
       prop-types: 15.8.1
       react: 18.3.1
@@ -17607,7 +17614,7 @@ snapshots:
 
   babel-plugin-macros@3.1.0:
     dependencies:
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.28.2
       cosmiconfig: 7.1.0
       resolve: 1.22.10
 
@@ -19035,7 +19042,7 @@ snapshots:
 
   dom-helpers@5.2.1:
     dependencies:
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.28.2
       csstype: 3.1.3
 
   dom-serializer@1.4.1:
@@ -19788,8 +19795,6 @@ snapshots:
 
   fn.name@1.1.0: {}
 
-  follow-redirects@1.15.9: {}
-
   follow-redirects@1.15.9(debug@4.4.0):
     optionalDependencies:
       debug: 4.4.0(supports-color@5.5.0)
@@ -20437,7 +20442,7 @@ snapshots:
   http-proxy@1.18.1:
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.9
+      follow-redirects: 1.15.9(debug@4.4.0)
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -21341,7 +21346,7 @@ snapshots:
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.0.8
 
-  langsmith@0.3.20(openai@4.95.1(ws@8.18.1)(zod@3.24.3)):
+  langsmith@0.3.20(openai@5.12.0(ws@8.18.1)(zod@3.24.3)):
     dependencies:
       '@types/uuid': 10.0.0
       chalk: 4.1.2
@@ -21351,7 +21356,7 @@ snapshots:
       semver: 7.7.1
       uuid: 10.0.0
     optionalDependencies:
-      openai: 4.95.1(ws@8.18.1)(zod@3.24.3)
+      openai: 5.12.0(ws@8.18.1)(zod@3.24.3)
 
   latest-version@7.0.0:
     dependencies:
@@ -22485,20 +22490,10 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
-  openai@4.95.1(ws@8.18.1)(zod@3.24.3):
-    dependencies:
-      '@types/node': 18.19.86
-      '@types/node-fetch': 2.6.12
-      abort-controller: 3.0.0
-      agentkeepalive: 4.6.0
-      form-data-encoder: 1.7.2
-      formdata-node: 4.4.1
-      node-fetch: 2.7.0
+  openai@5.12.0(ws@8.18.1)(zod@3.24.3):
     optionalDependencies:
       ws: 8.18.1
       zod: 3.24.3
-    transitivePeerDependencies:
-      - encoding
 
   openapi-fetch@0.8.2:
     dependencies:
@@ -23825,7 +23820,7 @@ snapshots:
 
   regenerator-transform@0.15.2:
     dependencies:
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.28.2
 
   regexp-tree@0.1.27: {}
 
