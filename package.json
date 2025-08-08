@@ -202,7 +202,7 @@
     "mathjs": "^14.4.0",
     "node-cache": "^5.1.2",
     "nunjucks": "^3.2.4",
-    "openai": "^4.93.0",
+    "openai": "^5.12.1",
     "opener": "^1.5.2",
     "proxy-agent": "^6.5.0",
     "python-shell": "^5.0.0",
